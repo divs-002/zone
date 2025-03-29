@@ -1,3 +1,6 @@
+#Client socket
+
+#Import socket module
 import socket
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_ip = "192.168.100.6"
@@ -6,6 +9,7 @@ client.connect((server_ip, port))
 print(f"connected to :{server_ip}:{port}")
 
 while True:
+    #Enter msg to send
     msg = input("Enter msg:")
     client.send(msg.encode('utf-8'))
     response = client.recv(1024).decode()
